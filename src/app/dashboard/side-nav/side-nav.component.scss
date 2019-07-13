@@ -1,0 +1,30 @@
+.list-group-flush{
+    //border:none !important;
+    padding-left: 0 !important;
+    border-bottom: 1px solid #999 !important;
+}
+.list-group-item{
+    border: none !important;
+    color: #666666;
+    cursor: pointer;
+    
+    p{ 
+        color: black;
+        margin-bottom: 0px;
+        font-size: 90%;
+    }
+}
+
+.list-group-item:hover{
+    background: whitesmoke;
+}
+#side-nav{
+    overflow-y: scroll;
+    height: 100vh;
+}
+#page{
+    overflow-y: scroll;
+    height: 100vh;
+}
+span{float: right;}
+span{text-align: right;margin-left: 8px;}

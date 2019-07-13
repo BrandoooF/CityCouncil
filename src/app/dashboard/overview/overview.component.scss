@@ -1,0 +1,22 @@
+table{
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+th{
+    background: #00aced;
+    color: white;
+}
+  
+tr:nth-child(even) {
+    background-color:  #f8fdff;
+}
+h5{ 
+    font-weight: 700;
+    color: #6699cc;
+    font-size: 90%;
+    margin-top: 30px;
+}

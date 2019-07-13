@@ -1,0 +1,19 @@
+<div class="col-md-12">
+  <div *ngIf="tasks.length > 0">
+    <app-task-list-row [tasks]="tasks"> </app-task-list-row>
+  </div>
+  <!--
+      <div *ngFor="let task of tasks" (click)="goToDetail(task.id)">
+          <p> {{task.name}}  {{task.date | date: 'medium'}}  {{task.category.name}}</p>   
+      </div>
+  </div>
+
+  -->
+  <div *ngIf="tasks.length <= 0" class="no-tasks">
+      <div class="thumbs">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+      </div>
+      <p>All Caught Up!</p>
+  </div>
+  
+</div>

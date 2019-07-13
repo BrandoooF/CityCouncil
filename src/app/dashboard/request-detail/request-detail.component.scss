@@ -1,0 +1,41 @@
+.task-header{
+    
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    
+    p{
+        width: 33%;
+    }
+}
+.flex-contact{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p{
+        display: inline-block;
+        font-size: 105%;
+    }
+}
+span{
+    margin-right: 4px;
+    color: #999;
+    font-size: 95%;
+}
+.inquiry-content{
+    min-height: 30vh;
+    height: 300px;
+    overflow-x: hidden;
+    width: 100%;
+    /*background: #fefefe;*/
+    padding: 16px;
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+}
+i{
+    color: #999;
+}

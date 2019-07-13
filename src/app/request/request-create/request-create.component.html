@@ -1,0 +1,98 @@
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="image-container" style="background: url('../assets/imgs/alabama.jpg');background-repeat: no-repeat;background-size: cover;"></div>
+      </div>
+
+      <div class="col-md-8 form-column">
+        <div class="head">
+          <h4 class="mb-5">Councilor, District 9</h4>
+          <h6>Inquiry/Request Form</h6>
+        </div>
+        
+        <div class="contact mb-5">
+          <p>710 North 20<sup>th</sup> St. Birmingham, Al 35203</p>
+          <p>P 205.254.2392</p>
+          <p>Fax 205.254.2603</p>
+          <p>Email johnhilliard@birminghamal.gov</p>
+        </div>
+
+        <form [formGroup]="requestForm" *ngIf="requestForm">
+          <div class="form-group">
+            <label>Full Name</label>
+              <input type="text" formControlName="name" class="form-control" placeholder="John Doe III">
+              <p class="text-danger" *ngIf="errors['name']">{{errors['name'][0]}}</p>
+          </div>
+          <div class="form-group">
+            <label class="w-50">Email
+              <input type="text" formControlName="email" placeholder="john.doe@gmail.com" class="form-control">  
+              <p class="text-danger" *ngIf="errors['email']">{{errors['email'][0]}}</p> 
+            </label>
+              
+              <label class="w-50">Phone
+              <input type="tel" formControlName="phone" placeholder="555-555-5555" class="form-control">  
+              <p class="text-danger" *ngIf="errors['phone']">{{errors['phone'][0]}}</p>
+              </label>
+          </div>
+          <div class="from-group">
+            <label>Address</label>
+              <input type="text" formControlName="address" placeholder="123 Main St, Birmingham, Alabama 3505" class="form-control"> 
+              <p class="text-danger" *ngIf="errors['address']">{{errors['address'][0]}}</p>        
+          </div>      
+          <div class="form-group my-5">
+            <hr/>
+              <label style="margin-right: 12px;">Neighborhood</label> 
+              <select formControlName="neighborhood" formControlName="neighborhood">
+                  <option *ngFor="let neighborhood of neighborhoods" value="{{neighborhood.id}}">{{neighborhood.name}}</option>
+              </select>
+              <small id="emailHelp" class="form-text text-muted"><a href="{{NEIGHBORHOOD_MAP_URL}}" target="_blank">Neighborhood Map</a></small>      
+              <p class="text-danger" *ngIf="errors['neighborhood']">{{errors['neighborhood'][0]}}</p>
+            </div>
+          <div class="form-group my-5">
+              <hr/>
+              <label style="margin-right: 12px;">Category</label>
+                <select formControlName="category">
+                  <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                </select>
+                <p class="text-danger" *ngIf="errors['category']">{{errors['category'][0]}}</p>
+          </div>
+          <div class="form-group mt-5">
+            <hr/>
+            <label>Message</label>
+            <ckeditor [editor]="Editor" data="<p>Your Message</p>" formControlName="request"></ckeditor>        
+          </div>
+          
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#exampleModal">
+            Submit Request
+          </button>
+        </form>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Submit Request</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Save and Submit Request To Your Constituent?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="submitRequest()">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+     </div>
+     </div> 
+ 

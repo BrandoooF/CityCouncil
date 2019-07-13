@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 mt-5 border-bottom">
+      <div class="task-header">
+        <div class="flex">
+            <p><span>Name</span>{{request?.name}}</p>
+            <p [ngClass]="request.status['name']"><span>Status</span>{{request?.status['name']}}</p>
+            <p><span>Submitted</span>{{request?.date | date: 'medium'}}</p>
+        </div>
+        <div class="flex-contact mb-5">
+            <p><i class="fa fa-map-marker" style="margin-right: 6px;" aria-hidden="true"></i><span>Neighborhood</span>{{request?.neighborhood_detail.name}}</p>
+            <p><i class="fa fa-map-marker" style="margin-right: 6px;" aria-hidden="true"></i><span>Address</span>{{request?.address}}</p>
+            <p><i class="fa fa-reply" style="margin-right: 6px;" aria-hidden="true"></i><span>Email</span>{{request?.email}}</p>
+            <p><i class="fa fa-phone" style="margin-right: 6px;" aria-hidden="true"></i><span>Phone</span>{{request?.phone}}</p>
+            <!--<p>{{request?.neighborhood}}</p>-->
+        </div>           
+      </div>
+      
+    </div>
+
+    <div class="col-md-12" class="inquiry-content" [innerHtml]="request?.request"></div>
+
+    <div class="col-md-12">
+      <app-request-actions [requestId]="request?.id" (statusChange)="handleStatusChange($event)"></app-request-actions>
+    </div>
+  </div>
+</div>

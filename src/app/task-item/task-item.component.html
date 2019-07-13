@@ -1,0 +1,6 @@
+<div (click)="goToDetail(task.id)" class="task-item" >
+  <p>{{task.name}}</p>
+  <p>{{task.date | date: 'MMMM d, yyyy'}}  {{task.category.name}}</p>
+  <p [ngClass]="task.status.name">{{task.status.name}}</p>
+  <i class="fa fa-chevron-right"></i>   
+</div>

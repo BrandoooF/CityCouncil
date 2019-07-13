@@ -1,0 +1,28 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-md-12 border-bottom">
+      <h4>{{category.name}}</h4>
+    </div>
+
+    <!--<div class="col-md-8 col-offset-2 border-bottom" *ngIf="tasks.length > 0">
+      <div *ngFor="let task of tasks" (click)="goToDetail(task.id)">
+        <p>{{task.name}}</p>
+        <p>{{task.address}}</p>
+        <p>phone: {{task.phone}} email: {{task.email}}</p>
+        {{task.date | date: 'medium'}}
+        <div [innerText]="task.request"></div>
+      </div>
+      
+    </div>-->
+
+    <div class="col-md-12">
+        <app-task-list-row [tasks]="tasks"></app-task-list-row>
+    </div>
+    
+
+    <div class="col-md-8 col-offset-2 border-bottom" *ngIf="tasks.length <= 0">
+      <p>No Tasks To Show</p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.task-item{
+    background: white;
+    padding: 12px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid whitesmoke;
+}
+.task-item:hover{
+    background: whitesmoke;
+}
+p, i{
+    font-weight: 600;
+    margin-bottom: 4px;
+    width: 24%;
+}
+i{
+    text-align: right;
+}
+.Waiting{
+    color: #cc4444;
+}
+.Resolved{
+    color: #4BB543;
+}
+.Progress{
+    color: #ff9933;
+}

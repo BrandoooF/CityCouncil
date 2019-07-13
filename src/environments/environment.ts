@@ -6,6 +6,11 @@ export const environment = {
   production: false
 };
 
+export const API_URL = 'http://localhost:8000'
+
+export const NEIGHBORHOOD_MAP_URL = 'https://www.google.com/maps/d/u/0/viewer?msa=0&mid=1YitWnZeUuTfVTsbf3uiIQsoeng8&ll=33.543281216080494%2C-86.82335278295898&z=13'
+
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

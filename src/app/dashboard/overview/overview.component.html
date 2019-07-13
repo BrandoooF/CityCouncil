@@ -1,0 +1,78 @@
+
+<div class="">
+  <div class="col-md-12 mt-5">
+    <h4>By Category</h4>
+    <table>
+              <tr>
+                <th>Category</th>
+                <th (click)="goToStatus(status.id)" *ngFor="let status of statusOptions">{{status.name}}</th>
+                <th>Total</th>
+                <th>%</th>
+              </tr>
+              <tr *ngFor="let category of requestsByCategories">
+                <td (click)="goToCategory(category.id)">{{ category.category }}</td>
+                <td *ngFor="let status of category.count_by_status; index as i">
+                  <span>{{status.count}}</span>
+                </td> 
+                <td>
+                  <span>{{category.list.length}}</span>
+                </td>
+                <td>
+                  <span>{{category.percentage}} %</span>
+                </td>       
+              </tr>
+    </table>
+  </div>
+
+  <div class="col-md-12 mt-5">
+      <h4>By Status</h4>
+      <table>
+                <tr>
+                  <th>Status</th>
+                  <!--<th (click)="goToStatus(status.id)" *ngFor="let status of statusOptions">{{status.name}}</th>-->
+                  <th>Total</th>
+                  <th>%</th>
+                </tr>
+                <tr *ngFor="let s of statusOptions">
+                  <td>{{ s.name }}</td>
+                  <td>{{ s.task_count }}</td>
+                  <td>{{ s.percentage }} %</td>
+                  <!--<td *ngFor="let status of category.count_by_status; index as i">
+                    <span>{{status.count}}</span>
+                  </td> 
+                  <td>
+                    <span>{{category.list.length}}</span>
+                  </td>
+                  <td>
+                    <span>{{category.percentage}} %</span>
+                  </td> -->      
+                </tr>
+      </table>
+    </div>
+
+  <div class="col-md-12 my-5">
+    <h4>By Neighborhood</h4>
+    <table>
+              <tr>
+                <th>Neighborhood</th>
+                <!--<th (click)="goToStatus(status.id)" *ngFor="let status of statusOptions">{{status.name}}</th>-->
+                <th>Total</th>
+                <th>%</th>
+              </tr>
+              <tr *ngFor="let hood of neighborhoodCounts.counts">
+                <td>{{ hood.neighborhood }}</td>
+                <td>{{ hood.count }}</td>
+                <td>{{ hood.percentage }} %</td>
+                <!--<td *ngFor="let status of category.count_by_status; index as i">
+                  <span>{{status.count}}</span>
+                </td> 
+                <td>
+                  <span>{{category.list.length}}</span>
+                </td>
+                <td>
+                  <span>{{category.percentage}} %</span>
+                </td> -->      
+              </tr>
+    </table>
+  </div>
+</div>
